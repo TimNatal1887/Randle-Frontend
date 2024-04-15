@@ -1,0 +1,46 @@
+.landing-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.site-header,
+.site-header-two{
+    margin-top: 20px;
+}
+.basketball-img {
+    height: 200px;
+    mix-blend-mode: multiply;
+    animation: rotate 2s linear infinite; /* Apply the animation */
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg); /* Start rotation from 0 degrees */
+    }
+    to {
+      transform: rotate(360deg); /* End rotation at 360 degrees */
+    }
+  }
+
+  .img-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .play-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:var(--knicks-blue);
+    color: #fff; 
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+  }
+  
+  .play-button:hover {
+    transform: scale(1.1); 
+  }
+  

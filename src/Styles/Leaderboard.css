@@ -1,0 +1,42 @@
+.leaderboard-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px auto; */
+    /* max-width: 600px; */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .leaderboard-table th {
+    color: whitesmoke;
+    background-color: var(--knicks-blue)
+  }
+  
+  .leaderboard-table tbody tr:nth-child(even) {
+      color: var(--knicks-orange);
+      background-color: var(--knicks-blue)
+    }
+    .leaderboard-table tbody tr:nth-child(odd) {
+        color: var(--knicks-blue);
+        background-color: var(--knicks-orange)
+    }
+    
+    .loggedIn-row td{
+      background-color: white;
+    }

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "../Styles/Login.css"
 
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -62,47 +63,38 @@ const Login = ({ setToggleLogin }) => {
   }
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>Login Component</h1>
-      <br />
-      <h2>
-        Use the DemoUser button to login and save time during your presentation
-      </h2>
+    <div style={{ textAlign: "center" }} className="login-container">
+      <div>
       <button onClick={handleDemoSignIn}>Demo User</button>
-      <br />
-      <br />
-      <br />
-
-      <h3> Remove the 'br' tags and these instructions if you use this code</h3>
-
-      <br />
-      <br />
-      <br />
-      <h3>Below is the regular login form which should be functional</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">
-          <input
-            id="username"
-            value={user.username}
-            type="text"
-            placeholder="username"
-            autoComplete="username"
-            onChange={handleChange}
-          />
-        </label>
-
-        <label htmlFor="password">
-          <input
-            id="password"
-            value={user.password}
-            type="password"
-            placeholder="password"
-            onChange={handleChange}
-            autoComplete="current-password"
-          />
-        </label>
-        <button>Submit</button>
-      </form>
+      </div>
+      <div className="login-form-wrap">
+        <h2 className="sign-in-head">Sign in to play!</h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <label htmlFor="username">
+            <input
+              id="username"
+              value={user.username}
+              type="text"
+              placeholder="username"
+              autoComplete="username"
+              onChange={(e) => handleChange(e, user, setUser)}
+              className="username-input"
+            />
+          </label>
+          <label htmlFor="password">
+            <input
+              id="password"
+              value={user.password}
+              type="password"
+              placeholder="password"
+              onChange={(e) => handleChange(e, user, setUser)}
+              autoComplete="current-password"
+              className="password-input"
+            />
+          </label>
+          <button className="login-button">Submit</button>
+        </form>
+      </div>
       <p>
         No Account? <Link to="/register">Register</Link>
       </p>

@@ -7,6 +7,9 @@ import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
 import NavBar from "./Components/NavBar";
 import LandingPage from "./Components/LandingPage";
+import Leaderboard from "./Components/Leaderboard";
+import About from "./Components/About";
+import "./App.css"
 
 function App() {
   const navigate = useNavigate();
@@ -21,15 +24,14 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <NavBar
         handleLogout={handleLogout}
         toggleLogin={toggleLogin}
         setToggleLogin={setToggleLogin}
       />
-
+      <div className="page-body-wrap">
       <Routes>
-        <Route path="/" element={<LandingPage />} />
         <Route
           path="/login"
           element={<Login setToggleLogin={setToggleLogin} />}
@@ -38,16 +40,20 @@ function App() {
           path="/register"
           element={<Register setToggleLogin={setToggleLogin} />}
         />
-
         <Route element={<ProtectedRoute />}>
           {/* Place protected routes here */}
           <Route
             path="/dashboard"
-            element={<Dashboard handleLogout={handleLogout} />}
+            element={<Dashboard handleLogout={handleLogout} setToggleLogin={setToggleLogin} />}
           />
+          <Route path="/leaderboards" element={<Leaderboard/>}/>
         </Route>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/about" element={<About />} />
+        
       </Routes>
-    </>
+      </div>
+    </div>
   );
 }
 

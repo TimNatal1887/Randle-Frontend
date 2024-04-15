@@ -1,15 +1,22 @@
 import { Link } from "react-router-dom";
+import "../Styles/Landing.css"
+
+const imageURL = "/assets/basketball.png"
 
 function LandingPage() {
   return (
-    <div style={{ textAlign: "center", marginTop: 100 }}>
-      <h1>This is Your Landing Page</h1>
+    <div className="landing-wrap">
+      <h1 className="site-header">Randle</h1>
+      <h2 className="site-header-two">An NBA Guessing Game</h2>
+      <div className="img-container">
+        <img src={imageURL} className="basketball-img"/>
+        <div className="dashboard-link">
+        <Link to="/dashboard">
+          <p className="play-button">Play Game</p>
+          </Link>
+        </div>
+      </div>
 
-      <h3>
-        Dashboard is a protected component. If you are not logged in and you try
-        to navigate to the component you will be sent to the Login Page. Try It!
-      </h3>
-      <Link to="/dashboard">Dashboard</Link>
     </div>
   );
 }

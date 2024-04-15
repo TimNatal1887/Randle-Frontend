@@ -1,0 +1,129 @@
+.dashboard-wrap{
+    border: 2px solid red;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logout-container{
+    margin: 10px 50px 0px 0px;
+}
+
+.logout-button,
+.restart-button{
+    height: 40px;
+    width: 100px;
+    margin: 0px 10px 0px 10px;
+}
+
+.player-search-bar{
+    margin-left: 50px;
+    height: 35px;
+    width: 500px;
+}
+
+.game-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin-top: 30px;
+}
+.create-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create-button{
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+}
+.dropdown {
+    margin-left: 50px;
+    position: relative;
+    max-width: 500px;
+}
+
+.dropdown ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 200px; /* Limit height to ensure scrollability */
+    overflow-y: auto; /* Enable vertical scrolling */
+    background-color: white; /* White background */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    border-top: none; /* Hide top border to match input box */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    list-style-type: none; /* Remove list bullet points */
+    z-index: 1000; /* Ensure dropdown appears above other elements */
+}
+
+.dropdown ul li {
+    padding: 8px 12px; /* Add padding for better readability */
+    cursor: pointer; /* Show pointer cursor on hover */
+}
+
+.dropdown ul li:hover {
+    background-color: gray; /* Change background color on hover */
+}
+ 
+.guessed-players h2 {
+    padding: 10px 0px;
+    margin-top: 20px;
+    margin-bottom: 10px; /* Margin between header and list items */
+    display: flex; /* Use flexbox to align spans horizontally */
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    background: white;
+    height: fit-content;
+}
+  
+.guessed-players h2 span {
+    flex: 1; /* Distribute equal width for each span */
+    text-align: center; /* Center align text within spans */
+}
+  
+ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.guessed-players-list li {
+    margin-bottom: 10px; /* Margin between list items */
+    display: flex; /* Use flexbox to align spans horizontally */
+    background: wheat;
+    align-items: center;
+    border: 1px solid black;
+}
+  
+
+.guessed-player{
+    border: 1px solid black;
+    font-weight: bold;
+}
+.guessed-player span{
+    display: flex;
+    border: 1px solid black;
+    height: 50px;
+    width: 100%;
+    flex: 1; /* Distribute equal width for each span */
+    text-align: center; /* Center align text within spans */
+    align-items: center;
+    justify-content: center;
+}
+.correct{
+    background: green;
+}
+
+.two{
+    background: yellow;
+}

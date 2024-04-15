@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "../Styles/Register.css"
 
 const URL = import.meta.env.VITE_BASE_URL;
 
@@ -45,20 +46,22 @@ const Register = ({ setToggleLogin }) => {
   // USE THIS FORM TO BUILD OUT YOUR FORM PROPERLY BY ADDING LABELS AND INPUTS AS WELL AS WHATEVER CSS FRAMEWORK YOU MAY USE OR VANILLA CSS. THIS IS JUST A BOILERPLATE CODE
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <p>
+    <div style={{ textAlign: "center" }} className="register-container">
+      <div className="register-form-wrap">
+      <p className="register-login-link">
         Already have an account? <Link to="/login">Login</Link>
       </p>
-      <h3>Register</h3>
-      <form onSubmit={handleSubmit}>
+      <h3 className="register-header">Register</h3>
+      <form onSubmit={handleSubmit} className="register-form">
         <label htmlFor="username">
           <input
             id="username"
             value={user.username}
             type="text"
             placeholder="username"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e, user, setUser)}
             autoComplete="username"
+            className="username-input"
           />
         </label>
 
@@ -68,8 +71,9 @@ const Register = ({ setToggleLogin }) => {
             value={user.email}
             type="email"
             placeholder="email"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e, user, setUser)}
             autoComplete="email"
+            className="email-input"
           />
         </label>
 
@@ -79,13 +83,15 @@ const Register = ({ setToggleLogin }) => {
             value={user.password}
             type="password"
             placeholder="password"
-            onChange={handleChange}
+            onChange={(e) => handleChange(e, user, setUser)}
             autoComplete="current-password"
+            className="password-input"
           />
         </label>
 
-        <button>Submit</button>
+        <button className="register-button">Submit</button>
       </form>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,38 @@
+:root{
+    --knicks-blue: #046AB4;
+    --knicks-orange: #F48328;
+}
+.navbar-container {
+    padding-top: 10px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+    background: var(--knicks-blue);
+    color: var(--knicks-orange);
+}
+
+.site-name {
+    margin-left: auto; 
+    margin-right: auto;
+    /* border: 1px solid black; */
+    width: 370px;
+    text-align: right;
+}
+
+.other-navlink-wraps {
+    display: flex;
+    /* border: 1px solid gray; */
+}
+
+
+.leaderboard-head-link,
+.about-head-link,
+.dashboard-head-link,
+.title-link {
+    text-decoration: none;
+    color: var(--knicks-orange);
+    margin: 0 10px; /* Add some space between links */
+}
+
+

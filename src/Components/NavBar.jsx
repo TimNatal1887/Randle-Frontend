@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../Styles/NavBar.css"
 
 import { Link } from "react-router-dom";
 
@@ -29,28 +30,26 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
 
   return (
     <div className="navbar-container">
-      <h1>Navbar Component</h1>
-      <h2>
-        <Link style={{ textDecoration: "none" }} to="/">
-          Your image or Logo (click here to go to Landing Page)
-        </Link>
-      </h2>
-
-      {!toggleLogin ? (
-        <Link to={"/login"}>
-          <span>Login</span>
-        </Link>
-      ) : (
-        <div>
-          {user && <span>Hello, {user.username.toUpperCase()}? | </span>}
-          <Link onClick={handleLogout}>
-            <span>Logout</span>
-          </Link>
+        <div className="site-name">
+            <Link to="/" className="title-link">
+                <h1>Randle</h1>
+            </Link>
         </div>
-      )}
-      <hr />
+        <div className="other-navlink-wraps">
+          {toggleLogin && 
+          <Link to="/dashboard" className="dashboard-head-link">
+            <h5>Dashboard</h5>
+          </Link>
+          }
+            <Link to="/leaderboards" className="leaderboard-head-link">
+                <h5>Leaderboards</h5>
+            </Link>
+            <Link to="/about" className="about-head-link">
+                <h5>About</h5>
+            </Link>
+            
+        </div>
     </div>
-  );
-};
-
+);
+}
 export default NavBar;
