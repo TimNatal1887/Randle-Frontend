@@ -30,7 +30,7 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
 
   return (
     <div className="navbar-container">
-        <div className="site-name">
+        <div className={`site-name ${toggleLogin ? "logged-in-title":"logged-out-title"}`}>
             <Link to="/" className="title-link">
                 <h1>Randle</h1>
             </Link>

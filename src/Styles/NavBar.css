@@ -14,8 +14,15 @@
 .site-name {
     /* border: 3px solid green; */
     margin-left: auto;
-    width: 400px; 
     text-align: right;
+}
+
+.logged-out-title{
+    width: 250px;
+}
+
+.logged-in-title{
+    width: 530px;
 }
 
 .other-navlink-wraps {
