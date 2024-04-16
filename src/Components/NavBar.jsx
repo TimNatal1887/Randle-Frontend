@@ -37,13 +37,15 @@ const NavBar = ({ toggleLogin, handleLogout }) => {
         </div>
         <div className="other-navlink-wraps">
           {toggleLogin && 
+          <>
           <Link to="/dashboard" className="dashboard-head-link">
             <h5>Dashboard</h5>
           </Link>
+          <Link to="/leaderboards" className="leaderboard-head-link">
+              <h5>Leaderboards</h5>
+          </Link>
+          </>
           }
-            <Link to="/leaderboards" className="leaderboard-head-link">
-                <h5>Leaderboards</h5>
-            </Link>
             <Link to="/about" className="about-head-link">
                 <h5>About</h5>
             </Link>

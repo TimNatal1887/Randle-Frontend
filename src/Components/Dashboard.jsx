@@ -147,14 +147,14 @@ const handleGuess = (player) =>{
         <div className="welcome-container">
           {/* {console.log(correctAnswer)} */}
           {user && (
-            <h1>
+            <h1 className="welcome-message">
               Welcome, {user.username[0].toUpperCase()}
               {user.username.slice(1).toLowerCase()}
             </h1>
           )} 
         </div>
         <div className="logout-container">
-          {hasGameStarted &&
+          {hasGameStarted && playersGuessed.length > 0 &&
           <button className="restart-button" onClick={restartGame}>Restart Game</button>
           }
           <button onClick={handleLogout} className="logout-button">Logout</button>
@@ -194,7 +194,7 @@ const handleGuess = (player) =>{
           </div>
           <div className="guessed-players">
             {/* {console.log(correctAnswer)} */}
-            <h2>
+            <h2 className="theader-span">
               <span>Name</span>
               <span>Team</span>
               <span>Conference</span>

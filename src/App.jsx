@@ -24,7 +24,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="page-wrap">
       <NavBar
         handleLogout={handleLogout}
         toggleLogin={toggleLogin}

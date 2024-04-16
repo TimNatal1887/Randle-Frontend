@@ -7,32 +7,47 @@
     font-size: 24px;
     display: flex;
     align-items: center;
-    /* border: 1px solid red; */
     background: var(--knicks-blue);
     color: var(--knicks-orange);
 }
 
 .site-name {
-    margin-left: auto; 
-    margin-right: auto;
-    /* border: 1px solid black; */
-    width: 370px;
+    /* border: 3px solid green; */
+    margin-left: auto;
+    width: 400px; 
     text-align: right;
 }
 
 .other-navlink-wraps {
+    margin-left: auto;
     display: flex;
-    /* border: 1px solid gray; */
 }
 
-
-.leaderboard-head-link,
-.about-head-link,
-.dashboard-head-link,
-.title-link {
+.title-link,
+.other-navlink-wraps *{
     text-decoration: none;
     color: var(--knicks-orange);
     margin: 0 10px; /* Add some space between links */
 }
 
 
+@media (max-width: 850px) {
+  .navbar-container {
+    font-size: 16px; /* Adjust font size */
+  }
+
+  .site-name {
+    margin-left: 50px; /* Reduce left margin */
+    text-align: center;
+  }
+
+
+
+  .leaderboard-head-link,
+  .about-head-link,
+  .dashboard-head-link {
+    display: block;
+    text-align: center; 
+    margin: 5px 0; /* Add space around each link */
+  }
+}

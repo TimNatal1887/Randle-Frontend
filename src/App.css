@@ -1,4 +1,9 @@
 .page-body-wrap{
     background-image:url("/assets/court-back.jpeg");
-    height: 86vh;
+    /* min-height: 86vh; */
+    height: 100%;
+}
+
+.page-wrap{
+    height: 100vh;
 }

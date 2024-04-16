@@ -1,0 +1,41 @@
+.about-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .about-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .github-link-wrap {
+    margin-bottom: 30px;
+  }
+  
+  .github-link-wrap h2 {
+    font-size: 1.5em;
+  }
+  
+  .github-img {
+    height: 175px;
+  }
+  
+  .github-link-wrap {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    height: fit-content;
+  }
+  
+  .github-img-link {
+    display: inline-block; 
+  }
+  

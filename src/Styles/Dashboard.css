@@ -1,5 +1,4 @@
 .dashboard-wrap{
-    border: 2px solid red;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -13,7 +12,10 @@
 .logout-container{
     margin: 10px 50px 0px 0px;
 }
-
+.welcome-message{
+    color: var(--knicks-blue);
+    margin: 10px 0px 5px 10px;
+}
 .logout-button,
 .restart-button{
     height: 40px;
@@ -31,7 +33,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
     margin-top: 30px;
 }
 .create-button-container{
@@ -55,31 +56,31 @@
     top: 100%;
     left: 0;
     width: 100%;
-    max-height: 200px; /* Limit height to ensure scrollability */
-    overflow-y: auto; /* Enable vertical scrolling */
-    background-color: white; /* White background */
-    border: 1px solid #ccc; /* Add a border for clarity */
-    border-top: none; /* Hide top border to match input box */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    list-style-type: none; /* Remove list bullet points */
-    z-index: 1000; /* Ensure dropdown appears above other elements */
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: white; 
+    border: 1px solid #ccc; 
+    border-top: none;
+    padding: 0; 
+    margin: 0;
+    list-style-type: none; 
+    z-index: 1000; 
 }
 
 .dropdown ul li {
-    padding: 8px 12px; /* Add padding for better readability */
-    cursor: pointer; /* Show pointer cursor on hover */
+    padding: 8px 12px; 
+    cursor: pointer; 
 }
 
 .dropdown ul li:hover {
-    background-color: gray; /* Change background color on hover */
+    background-color: gray; 
 }
  
-.guessed-players h2 {
+.theader-span {
     padding: 10px 0px;
     margin-top: 20px;
-    margin-bottom: 10px; /* Margin between header and list items */
-    display: flex; /* Use flexbox to align spans horizontally */
+    margin-bottom: 10px;
+    display: flex; 
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -87,9 +88,9 @@
     height: fit-content;
 }
   
-.guessed-players h2 span {
-    flex: 1; /* Distribute equal width for each span */
-    text-align: center; /* Center align text within spans */
+.theader-span span {
+    flex: 1; 
+    text-align: center; 
 }
   
 ul {
@@ -127,3 +128,25 @@ ul {
 .two{
     background: yellow;
 }
+
+@media (max-width: 850px) {
+    .guessed-player span{
+        max-height: 40px;
+        max-width: 75%;
+        font-size: 14px;
+    }
+
+    .theader-span{
+        max-height: 40px;
+        font-size: 16px;
+    }
+
+    .theader-span span{
+        margin: 5px;
+    }
+    .player-search-bar {
+        width: 50%; 
+        max-width: 300px; 
+  
+      }
+  }
