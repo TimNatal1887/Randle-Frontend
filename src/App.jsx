@@ -41,7 +41,6 @@ function App() {
           element={<Register setToggleLogin={setToggleLogin} />}
         />
         <Route element={<ProtectedRoute />}>
-          {/* Place protected routes here */}
           <Route
             path="/dashboard"
             element={<Dashboard handleLogout={handleLogout} setToggleLogin={setToggleLogin} />}
@@ -50,7 +49,6 @@ function App() {
         </Route>
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
-        
       </Routes>
       </div>
     </div>

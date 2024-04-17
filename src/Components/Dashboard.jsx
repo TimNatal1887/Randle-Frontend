@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate, useOutletContext } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 import "../Styles/Dashboard.css"
 import { getAllPlayers, getUserById, updateGame, updateUserTotal } from "../helpers/fetch";
 import { heightCheck, ageCheck, jerseyCheck } from "../helpers/helpers";
 const API = import.meta.env.VITE_BASE_URL
 
 const Dashboard = ({ handleLogout, setToggleLogin }) => {
-  const navigate = useNavigate()
   const [game, setGame] = useState({})
   const [currentGuess, setCurrentGuess] = useState("")
   const [winStatus, setWinStatus] = useState(false)
@@ -22,25 +21,21 @@ const Dashboard = ({ handleLogout, setToggleLogin }) => {
   const createGame = () =>{
     const correct_answer = Math.floor(Math.random() * players.length)
     const userId = user.id
-    const csrfToken = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("XSRF-TOKEN="))
-    .split("=")[1];
     
     const newGame = {
       correct_answer,
       user_id: userId,
       score:0
     }
-
+    
+    const token = localStorage.getItem('token')
 
     fetch(`${API}/api/games`, {
       method: "POST",
       headers: {
           "Content-Type": "application/json",
-          "CSRF-Token": csrfToken,
+          Authorization: `Bearer ${token}`
       },
-      credentials: "include",
       body: JSON.stringify(newGame)
     })
     .then((res)=> res.json()
@@ -50,19 +45,18 @@ const Dashboard = ({ handleLogout, setToggleLogin }) => {
       .then((res)=> res.json())
       .then((data)=> setCorrectAnswer(data))
     }))  
-
   }
 
   
-const handleChange = (event) => {
-  const value = event.target.value.trim();
-  setCurrentGuess(value);
-  if (value === '') {
+  const handleChange = (event) => {
+    const value = event.target.value.trim();
+    setCurrentGuess(value);
+    if (value === '') {
       setFilteredPlayers([]);
       return; 
-  }
- 
-  const filtered = players.filter((player) => {
+    }
+   
+    const filtered = players.filter((player) => {
       const hyphenatedNameParts = player.last_name.split("-");
       const firstName = player.first_name.toLowerCase();
       const lastName = player.last_name.toLowerCase();
@@ -76,21 +70,19 @@ const handleChange = (event) => {
               return true;
           }
       }
-
       return false;
-  });
-
-  setFilteredPlayers(filtered);
-};
-const getScore = (guessArray, ) =>{
-  const newScore = 700 - (guessArray.length * 100)
-  return newScore
-}
-const handleGuess = (player) =>{
-  setPlayersGuessed([...playersGuessed, player])
-  setCurrentGuess("")
-  setFilteredPlayers([])
-}
+    });
+    setFilteredPlayers(filtered);
+  };
+  const getScore = (guessArray, ) =>{
+    const newScore = 700 - (guessArray.length * 100)
+    return newScore
+  }
+  const handleGuess = (player) =>{
+    setPlayersGuessed([...playersGuessed, player])
+    setCurrentGuess("")
+    setFilteredPlayers([])
+  }
 
 
   const startGame = () =>{
@@ -143,9 +135,9 @@ const handleGuess = (player) =>{
   if(players.length < 1) return null
   return (
     <div className="dashboard-wrap">
+      {console.log(correctAnswer)}
       <div className="dashboard-header">
         <div className="welcome-container">
-          {/* {console.log(correctAnswer)} */}
           {user && (
             <h1 className="welcome-message">
               Welcome, {user.username[0].toUpperCase()}
@@ -193,7 +185,6 @@ const handleGuess = (player) =>{
               )}
           </div>
           <div className="guessed-players">
-            {/* {console.log(correctAnswer)} */}
             <h2 className="theader-span">
               <span>Name</span>
               <span>Team</span>

@@ -12,7 +12,6 @@
 }
 
 .site-name {
-    /* border: 3px solid green; */
     margin-left: auto;
     text-align: right;
 }
@@ -34,17 +33,17 @@
 .other-navlink-wraps *{
     text-decoration: none;
     color: var(--knicks-orange);
-    margin: 0 10px; /* Add some space between links */
+    margin: 0 10px; 
 }
 
 
 @media (max-width: 850px) {
   .navbar-container {
-    font-size: 16px; /* Adjust font size */
+    font-size: 16px; 
   }
 
   .site-name {
-    margin-left: 50px; /* Reduce left margin */
+    margin-left: 50px; 
     text-align: center;
   }
 

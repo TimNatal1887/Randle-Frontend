@@ -11,15 +11,15 @@
 .basketball-img {
     height: 200px;
     mix-blend-mode: multiply;
-    animation: rotate 2s linear infinite; /* Apply the animation */
+    animation: rotate 2s linear infinite;
   }
   
   @keyframes rotate {
     from {
-      transform: rotate(0deg); /* Start rotation from 0 degrees */
+      transform: rotate(0deg); 
     }
     to {
-      transform: rotate(360deg); /* End rotation at 360 degrees */
+      transform: rotate(360deg); 
     }
   }
 

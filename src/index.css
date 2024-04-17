@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'KnickFont'; /* Name your font family */
-  src: url('/assets/nba-knicks.ttf'); /* Locate the .ttf file within your directory*/
+  src: url('/assets/nba-knicks.ttf'); 
 }
 
 

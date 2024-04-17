@@ -99,8 +99,8 @@ ul {
 }
   
 .guessed-players-list li {
-    margin-bottom: 10px; /* Margin between list items */
-    display: flex; /* Use flexbox to align spans horizontally */
+    margin-bottom: 10px; 
+    display: flex; 
     background: wheat;
     align-items: center;
     border: 1px solid black;
@@ -116,8 +116,8 @@ ul {
     border: 1px solid black;
     height: 50px;
     width: 100%;
-    flex: 1; /* Distribute equal width for each span */
-    text-align: center; /* Center align text within spans */
+    flex: 1; 
+    text-align: center; 
     align-items: center;
     justify-content: center;
 }

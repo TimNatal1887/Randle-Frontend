@@ -1,9 +1,5 @@
 const API = import.meta.env.VITE_BASE_URL
-const csrfToken = document.cookie
-.split("; ")
-.find((row) => row.startsWith("XSRF-TOKEN="))
-.split("=")[1];
-
+const token = localStorage.getItem('token') 
 export function getAllPlayers(){
     return fetch(`${API}/api/players`)
     .then((res)=>res.json())
@@ -14,16 +10,14 @@ export function updateGame(game, id){
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
-            "CSRF-Token": csrfToken,
+            Authorization: `Bearer ${token}`
         },
-        credentials: "include",
         body: JSON.stringify(game)
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Failed to update game');
         }
-            // Handle success if needed
             return response.json();
         })
 }
@@ -43,16 +37,14 @@ export function updateUserTotal(game,user){
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
-            "CSRF-Token": csrfToken,
+            Authorization: `Bearer ${token}`
         },
-        credentials: "include",
         body: JSON.stringify({game,user})
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Failed to update game');
         }
-            // Handle success if needed
             return response.json();
         })
 }
