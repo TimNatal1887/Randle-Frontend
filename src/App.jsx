@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import ProtectedRoute from "./Components/ProtectedRoute";
@@ -23,6 +23,10 @@ function App() {
     navigate("/login");
   }
 
+  useEffect(()=>{
+    const token = localStorage.getItem("token");
+    if(token) setToggleLogin(true)
+  },[])
   return (
     <div className="page-wrap">
       <NavBar
