@@ -135,7 +135,6 @@ const Dashboard = ({ handleLogout, setToggleLogin }) => {
   if(players.length < 1) return null
   return (
     <div className="dashboard-wrap">
-      {console.log(correctAnswer)}
       <div className="dashboard-header">
         <div className="welcome-container">
           {user && (

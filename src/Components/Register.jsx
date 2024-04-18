@@ -6,7 +6,7 @@ const URL = import.meta.env.VITE_BASE_URL;
 
 const Register = ({ setToggleLogin }) => {
   const navigate = useNavigate();
-  const [user, setUser] = useState({ username: "", password: "", email: "" });
+  const [user, setUser] = useState({ username: "", password: "", email: "", total_score:0});
 
   function handleChange(event) {
     setUser({ ...user, [event.target.id]: event.target.value });
