@@ -137,7 +137,7 @@ ul {
 
 @media (max-width: 850px) and (min-width: 414px) {
     .dashboard-wrap *{
-        font-size: 12px;
+        font-size: 10px;
     }
 
     .logout-container{
@@ -174,11 +174,13 @@ ul {
 
   @media (max-width:413px) {
     .dashboard-wrap * {
-        font-size: 10px;
+        font-size: 12px;
     }
     .guessed-player span{
-        max-height: 40px;
-        max-width: 75%;
+        padding:5px 0px;
+        height: 40px;
+        width: 40px;
+        font-size: 6px;
     }
 
     .theader-span{
@@ -186,9 +188,11 @@ ul {
     }
 
     .theader-span span{
-        font-size: 10px;
+       font-size: 8px;
         height: 10px;
         margin: 5px;
+        width: 40px;
+        padding: 0px;
     }
     .player-search-bar {
         width: 50%; 
@@ -202,7 +206,7 @@ ul {
 
     .logout-button, 
     .restart-button{
-        font-size: 10px;
+        font-size: 8px;
         height: 3vh;
         width: 15vh;
     }
