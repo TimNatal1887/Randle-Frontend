@@ -50,10 +50,12 @@ const Leaderboard = () => {
                     ))}
                 </tbody>
             </table>
+            {currentUsers.length > 10 && 
             <div className="pagination">
                 <button onClick={prevPage} disabled={currentPage === 1} className='prev-page-button'>Previous Page</button>
                 <button onClick={nextPage} disabled={currentUsers.length < usersPerPage} className='next-page-button'>Next Page</button>
             </div>
+            }
         </div>
     );
 };
