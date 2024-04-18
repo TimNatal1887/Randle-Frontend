@@ -46,3 +46,8 @@
     width: 100px;
     margin: 0px auto 0px auto;
 }
+
+.error{
+    margin-top: 10px;
+    color: red;
+}
