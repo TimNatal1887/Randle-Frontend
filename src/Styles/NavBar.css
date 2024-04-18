@@ -12,16 +12,17 @@
 }
 
 .site-name {
-    margin-left: auto;
-    text-align: right;
+  /* border: 1px solid black; */
+  margin-left: auto;
+  text-align: right;
 }
 
 .logged-out-title{
-    width: 25%;
+    width: 18%;
 }
 
 .logged-in-title{
-    width: 20%;
+    width: 37%;
 }
 
 .other-navlink-wraps {

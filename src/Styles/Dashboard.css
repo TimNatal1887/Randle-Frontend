@@ -21,9 +21,8 @@
 }
 .logout-button,
 .restart-button{
-    padding: 10%;
-    height: 6vh;
-    width: 100%;
+    height: 7vh;
+    width: 60px;
     margin: 5px 0px;
 }
 
@@ -93,7 +92,6 @@
 }
   
 .theader-span span {
-    /* border: 1px solid green; */
     font-size: 20px;
     flex: 1; 
     text-align: center; 
@@ -149,27 +147,29 @@ ul {
         height: 5vh;
         margin: 0px 5px;
     }
-  
-    .guessed-player span{
-        max-height: 40px;
-        max-width: 75%;
-        font-size: 12px;
-    }
-
+    
     .theader-span{
-        max-height: 25%;
-        font-size: 1vh;
+       width: 100%;
     }
 
     .theader-span span{
-        font-size: 12px;
+        font-size: 10px;
         height: 10px;
         margin: 5px;
+        width: calc((100% / 8));
     }
     .player-search-bar {
         width: 50%; 
         max-width: 300px; 
       }
+    .guessed-player span{
+        height: 40px;
+        /* font-size: 10px; */
+        width: calc(100% / 8);
+    }
+    .name-span{
+        font-size: 7px;
+    }
   }
 
   @media (max-width:413px) {
