@@ -65,7 +65,7 @@ const Login = ({ setToggleLogin }) => {
   return (
     <div style={{ textAlign: "center" }} className="login-container">
       <div>
-      {/* <button onClick={handleDemoSignIn}>Demo User</button> */}
+      <button onClick={handleDemoSignIn}>Demo User</button>
       </div>
       <div className="login-form-wrap">
         <h2 className="sign-in-head">Sign in to play!</h2>
