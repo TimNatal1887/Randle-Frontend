@@ -1,5 +1,6 @@
 .dashboard-wrap{
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -10,6 +11,8 @@
 }
 
 .logout-container{
+    display: flex;
+    flex-direction: column;
     margin: 10px 50px 0px 0px;
 }
 .welcome-message{
@@ -18,9 +21,10 @@
 }
 .logout-button,
 .restart-button{
-    height: 100%;
+    padding: 10%;
+    height: 6vh;
     width: 100%;
-    margin: 0px 10px 0px 10px;
+    margin: 5px 0px;
 }
 
 .player-search-bar{
@@ -131,7 +135,21 @@ ul {
     background: yellow;
 }
 
-@media (max-width: 850px) and (min-width: 415px) {
+@media (max-width: 850px) and (min-width: 414px) {
+    .dashboard-wrap *{
+        font-size: 12px;
+    }
+
+    .logout-container{
+        flex-direction: row;
+    }
+    .logout-button,
+    .restart-button{
+        font-size: 10px;
+        height: 5vh;
+        margin: 0px 5px;
+    }
+  
     .guessed-player span{
         max-height: 40px;
         max-width: 75%;
@@ -140,28 +158,27 @@ ul {
 
     .theader-span{
         max-height: 25%;
-        font-size: 12px;
+        font-size: 1vh;
     }
 
     .theader-span span{
+        font-size: 12px;
         height: 10px;
         margin: 5px;
     }
     .player-search-bar {
         width: 50%; 
         max-width: 300px; 
-
       }
   }
 
-  @media (max-width:414px) {
+  @media (max-width:413px) {
     .dashboard-wrap * {
-        font-size: 2vh;
+        font-size: 10px;
     }
     .guessed-player span{
         max-height: 40px;
         max-width: 75%;
-        font-size: 2vh;
     }
 
     .theader-span{
@@ -169,26 +186,24 @@ ul {
     }
 
     .theader-span span{
-        font-size: 2vh;
+        font-size: 10px;
         height: 10px;
         margin: 5px;
     }
     .player-search-bar {
         width: 50%; 
         max-width: 300px; 
-  
       }
 
-      .logout-container{
-        border: 1px solid green;
-        margin-left: auto;
-        margin-right: 0px;
-      }
+    .logout-container{
+      margin-left: auto;
+      margin-right: 0px;
+    }
 
     .logout-button, 
     .restart-button{
+        font-size: 10px;
         height: 3vh;
         width: 15vh;
     }
-
   }

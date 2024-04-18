@@ -38,7 +38,7 @@
 }
 
 
-@media (max-width: 850px) {
+@media (max-width: 850px) and (min-width:414px){
   .navbar-container {
     font-size: 16px; 
   }
@@ -61,7 +61,7 @@
 
 
 
-@media (max-width: 414px) {
+@media (max-width: 413px) {
   .navbar-container {
     font-size: 12px; /* Adjust font size for smaller screens */
     padding-top: 5px; /* Adjust padding for smaller screens */
@@ -74,7 +74,7 @@
 
   .other-navlink-wraps {
     margin-left: 3px;
-    font-size: 8px;
+    font-size: 12px;
     /* display: none; Hide other navigation links on smaller screens */
   }
 
