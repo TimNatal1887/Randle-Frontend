@@ -18,8 +18,8 @@
 }
 .logout-button,
 .restart-button{
-    height: 40px;
-    width: 100px;
+    height: 100%;
+    width: 100%;
     margin: 0px 10px 0px 10px;
 }
 
@@ -89,6 +89,8 @@
 }
   
 .theader-span span {
+    /* border: 1px solid green; */
+    font-size: 20px;
     flex: 1; 
     text-align: center; 
 }
@@ -129,11 +131,7 @@ ul {
     background: yellow;
 }
 
-@media (max-width: 850px) {
-    .dashboard-wrap{
-        height: 100vh;
-        width: 100vw;
-    }
+@media (max-width: 850px) and (min-width: 415px) {
     .guessed-player span{
         max-height: 40px;
         max-width: 75%;
@@ -152,6 +150,45 @@ ul {
     .player-search-bar {
         width: 50%; 
         max-width: 300px; 
+
+      }
+  }
+
+  @media (max-width:414px) {
+    .dashboard-wrap * {
+        font-size: 2vh;
+    }
+    .guessed-player span{
+        max-height: 40px;
+        max-width: 75%;
+        font-size: 2vh;
+    }
+
+    .theader-span{
+        max-height: 25%;
+    }
+
+    .theader-span span{
+        font-size: 2vh;
+        height: 10px;
+        margin: 5px;
+    }
+    .player-search-bar {
+        width: 50%; 
+        max-width: 300px; 
   
       }
+
+      .logout-container{
+        border: 1px solid green;
+        margin-left: auto;
+        margin-right: 0px;
+      }
+
+    .logout-button, 
+    .restart-button{
+        height: 3vh;
+        width: 15vh;
+    }
+
   }

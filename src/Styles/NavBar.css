@@ -17,16 +17,17 @@
 }
 
 .logged-out-title{
-    width: 250px;
+    width: 25%;
 }
 
 .logged-in-title{
-    width: 530px;
+    width: 20%;
 }
 
 .other-navlink-wraps {
     margin-left: auto;
     display: flex;
+    justify-content: space-between;
 }
 
 .title-link,
@@ -52,8 +53,45 @@
   .leaderboard-head-link,
   .about-head-link,
   .dashboard-head-link {
-    display: block;
+    /* display: */
     text-align: center; 
     margin: 5px 0; /* Add space around each link */
+  }
+}
+
+
+
+@media (max-width: 414px) {
+  .navbar-container {
+    font-size: 12px; /* Adjust font size for smaller screens */
+    padding-top: 5px; /* Adjust padding for smaller screens */
+  }
+
+  .site-name {
+   /* Center site name on smaller screens */
+    text-align: center; 
+  }
+
+  .other-navlink-wraps {
+    margin-left: 3px;
+    font-size: 8px;
+    /* display: none; Hide other navigation links on smaller screens */
+  }
+
+  .other-navlink-wraps h5 {
+    margin-left: 5px;
+  }
+
+  .logged-out-title {
+    width: 50%; /* Adjust width of logged-out title for smaller screens */
+  }
+
+  .logged-in-title {
+    width: 40%; /* Adjust width of logged-in title for smaller screens */
+  }
+
+  .title-link,
+  .other-navlink-wraps * {
+    margin: 0; /* Remove margin around links for smaller screens */
   }
 }
