@@ -176,24 +176,34 @@ ul {
     .dashboard-wrap * {
         font-size: 12px;
     }
-    .guessed-player span{
-        padding:5px 0px;
-        height: 40px;
-        width: 40px;
+    .theader-span {
+        display: flex;
+        align-items: center;
+        background: white;
+        border: 1px solid black;
+        height: fit-content;
+        width: 100%; 
+    }
+
+    .theader-span span {
+        font-size: 8px;
+        flex: 1;
+        text-align: center;
+        width: calc(100% / 8); 
+    }
+
+    .guessed-player span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+        height: 30px;
+        width: calc(100%/8); 
+        text-align: center;
         font-size: 6px;
     }
 
-    .theader-span{
-        max-height: 25%;
-    }
-
-    .theader-span span{
-       font-size: 8px;
-        height: 10px;
-        margin: 5px;
-        width: 40px;
-        padding: 0px;
-    }
+    
     .player-search-bar {
         width: 50%; 
         max-width: 300px; 
