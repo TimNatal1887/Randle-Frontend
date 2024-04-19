@@ -19,7 +19,8 @@ const Dashboard = ({ handleLogout, setToggleLogin }) => {
   const [userObject, setUserObject] = useState({})
 
   const createGame = () =>{
-    const correct_answer = Math.floor(Math.random() * players.length)
+    const correct_answer_Index = Math.floor(Math.random() * players.length)
+    const correct_answer = players.find((player,index)=> index === correct_answer_Index).id
     const userId = user.id
     
     const newGame = {
@@ -136,6 +137,7 @@ const Dashboard = ({ handleLogout, setToggleLogin }) => {
   return (
     <div className="dashboard-wrap">
       <div className="dashboard-header">
+        {console.log(correctAnswer)}
         <div className="welcome-container">
           {user && (
             <h1 className="welcome-message">
@@ -196,9 +198,10 @@ const Dashboard = ({ handleLogout, setToggleLogin }) => {
             </h2>
             <ul className="guessed-players-list">
               {playersGuessed.map((player, index)=> {
+                const {jersey_number:guessJersey} = player
                 const guessedPlayerHeight = player.height_feet * 12 + player.height_inches
                 const correctPlayerHeight = correctAnswer.height_feet * 12 + correctAnswer.height_inches
-                
+      
                 const sameName = player.first_name + player.last_name === correctAnswer.first_name + correctAnswer.last_name
                 const sameTeam = player.current_team === correctAnswer.current_team
                 const sameConference = player.conference === correctAnswer.conference
@@ -207,8 +210,9 @@ const Dashboard = ({ handleLogout, setToggleLogin }) => {
                 const sameHeight = heightCheck(player, correctAnswer)
                 const sameAge = ageCheck(player, correctAnswer)
                 const sameJersey = jerseyCheck(player, correctAnswer)
+                console.log(sameJersey)
+                const jerseyHigherOrLower = typeof(sameJersey) !== 'boolean' ? sameJersey.match("minus") || sameJersey.match("plus"):"equal"
 
-                
                 return (
                 <li key={`${player.first_name}${player.last_name}${index}`} className="guessed-player">
                   <span className={`name-span ${sameName ? "correct":"incorrect"}`}>{player.first_name} {player.last_name}</span>
@@ -218,7 +222,7 @@ const Dashboard = ({ handleLogout, setToggleLogin }) => {
                   <span className={`position-span ${samePosition ? "correct":"incorrect"}`}>{player.position}</span>
                   <span className={`height-span ${typeof(sameHeight) === "string" ? sameHeight: sameHeight ? "correct":"incorrect" }`}>{player.height_feet}'{player.height_inches} { guessedPlayerHeight > correctPlayerHeight ? "⬇️": guessedPlayerHeight < correctPlayerHeight ? "⬆️":""}</span>
                   <span className={`age-span ${typeof(sameAge) === "string" ? sameAge: sameAge ? "correct":"incorrect" }`}>{player.age}{ player.age > correctAnswer.age ? "⬇️": player.age < correctAnswer.age ? "⬆️":""}</span>
-                  <span className={`jersey-span ${typeof(sameJersey) === "string" ? sameJersey: sameJersey ? "correct":"incorrect" }`}>{player.jersey_number}{ player.jersey_number > correctAnswer.jersey_number? "⬇️": player.jersey_number < correctAnswer.jersey_number ? "⬆️":""}</span>
+                  <span className={`jersey-span ${typeof(sameJersey) === "string" ? sameJersey: sameJersey ? "correct":"incorrect" }`}>{guessJersey === 100 ? "00":guessJersey}{typeof(jerseyHigherOrLower) !== 'object' ? "": jerseyHigherOrLower[0] === 'plus' ? "⬆️":"⬇️"}</span>
                 </li>
               )
               })}

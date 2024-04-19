@@ -45,23 +45,34 @@ export function ageCheck(guessedPlayer,correctPlayer){
     return false
 }
 
-export function jerseyCheck(guessedPlayer, correctPlayer){
-    const {jersey_number:guessedPlayerJerseyNum} = guessedPlayer
-    const {jersey_number:correctPlayerJerseyNum} = correctPlayer
-    const jersey_numberDiff = guessedPlayerJerseyNum - correctPlayerJerseyNum
-    
-    if(jersey_numberDiff === 0){
-       return true
-    }else if(jersey_numberDiff < 0){
-        if(jersey_numberDiff < 0 && jersey_numberDiff >= -2){
-            return "plus two"
-        } 
-        return "plus"
-    }else if(jersey_numberDiff > 0){
-        if(jersey_numberDiff > 0 && jersey_numberDiff <= 2){
-            return "minus two"
+export function jerseyCheck(guessedPlayer, correctPlayer) {
+    const { jersey_number: guessedPlayerJerseyNum } = guessedPlayer;
+    const { jersey_number: correctPlayerJerseyNum } = correctPlayer;
+
+    if (guessedPlayerJerseyNum === 100 && correctPlayerJerseyNum <= 2) {
+        return "plus two";
+    } else if (guessedPlayerJerseyNum === 100 && correctPlayerJerseyNum > 2 && correctPlayerJerseyNum !== 100) {
+        return "plus";
+    } else if (correctPlayerJerseyNum === 100 && guessedPlayerJerseyNum <= 2 && guessedPlayerJerseyNum !== 100){
+        return "minus two"
+    } else if (correctPlayerJerseyNum === 100 && guessedPlayerJerseyNum > 2 && guessedPlayerJerseyNum !== 100) {
+        return "minus";
+    } else {
+        const jersey_numberDiff = guessedPlayerJerseyNum - correctPlayerJerseyNum;
+
+        if (jersey_numberDiff === 0) {
+            return true;
+        } else if (jersey_numberDiff < 0) {
+            if (jersey_numberDiff >= -2) {
+                return "plus two";
+            }
+            return "plus";
+        } else if (jersey_numberDiff > 0) {
+            if (jersey_numberDiff <= 2) {
+                return "minus two";
+            }
+            return "minus";
         }
-        return "minus"
     }
-    return false
+    return false;
 }
